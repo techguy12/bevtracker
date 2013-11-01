@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="11G63" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="BeverageCategories" representedClassName="BeverageCategories" syncable="YES">
+        <relationship name="beverage" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Beverages" inverseName="beverageCategory" inverseEntity="Beverages" syncable="YES"/>
+        <relationship name="beverageCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BeverageCategories" inverseName="beverageCategory" inverseEntity="BeverageCategories" syncable="YES"/>
+    </entity>
+    <entity name="Beverages" representedClassName="Beverages" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="varietal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vintage" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="beverageCategory" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="BeverageCategories" inverseName="beverage" inverseEntity="BeverageCategories" syncable="YES"/>
+        <relationship name="distributor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Distributors" inverseName="beverage" inverseEntity="Distributors" syncable="YES"/>
+    </entity>
+    <entity name="Categories" representedClassName="Categories" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parentId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Distributors" representedClassName="Distributors" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="salesName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="venueId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="beverage" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Beverages" inverseName="distributor" inverseEntity="Beverages" syncable="YES"/>
+    </entity>
+    <entity name="Venue" representedClassName="Venue" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tabletLogin" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BeverageCategories" positionX="52" positionY="81" width="128" height="75"/>
+        <element name="Beverages" positionX="-27" positionY="285" width="128" height="150"/>
+        <element name="Categories" positionX="-99" positionY="81" width="128" height="90"/>
+        <element name="Distributors" positionX="286" positionY="72" width="128" height="150"/>
+        <element name="Venue" positionX="45" positionY="-18" width="128" height="90"/>
+    </elements>
+</model>
