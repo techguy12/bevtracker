@@ -1,4 +1,4 @@
 bevtracker
 ==========
 
-Uncorkd iOS inventory tracker
+iOS inventory tracker
